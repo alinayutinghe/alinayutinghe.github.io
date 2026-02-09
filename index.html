@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuting Alina He 贺钰婷 | Encountering Security</title>
+    <style>
+        :root {
+            --space: #1C2951;
+            --white: #ffffff;
+            --margin-body: 12vw;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--white);
+            color: var(--space);
+            font-family: "Cambria", "Times New Roman", serif;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 75%;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 1.2rem;
+            border-bottom: 0.5px solid var(--space);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--space);
+            font-size: 0.75rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+        }
+
+        h1, h2, h3, .section-title {
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 0.25rem;
+        }
+
+        /* HERO */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 var(--margin-body);
+        }
+
+        .headshot {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 3rem;
+            filter: grayscale(100%);
+        }
+
+        .name-title { font-size: 2rem; margin-bottom: 1rem; }
+        .subtitle { font-size: 1rem; max-width: 650px; }
+
+        /* SECTIONS */
+        section { padding: 120px var(--margin-body); max-width: 1400px; margin: 0 auto; }
+        .section-title { font-size: 1.3rem; margin-bottom: 3rem; border-left: 1px solid var(--space); padding-left: 1.5rem; }
+        .sub-section-title { font-size: 1rem; margin: 2rem 0; letter-spacing: 0.15rem; border-bottom: 0.5px solid var(--space); display: inline-block; }
+        
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .grid-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; }
+        .item { margin-bottom: 2.5rem; }
+        .teaching-item { margin-bottom: 3rem; }
+        a { color: var(--space); text-decoration: underline; text-underline-offset: 3px; transition: opacity 0.3s; }
+        a:hover { opacity: 0.6; }
+
+        /* INTERACTIVE PROJECTS */
+        #project-container { position: relative; min-height: 400px; }
+        .project-list, .project-detail { transition: opacity 0.5s ease; }
+        .hidden { display: none; opacity: 0; }
+        .back-btn { cursor: pointer; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1rem; margin-bottom: 2rem; display: inline-block; border-bottom: 1px solid var(--space); }
+
+        footer { text-align: center; padding: 5rem; font-size: 0.7rem; letter-spacing: 0.2rem; opacity: 0.5; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#media">Media</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header>
+        <img src="Yuting_Alina_He.jpg" alt="Yuting Alina He" class="headshot"><br>
+        <h1 class="name-title">YUTING ALINA HE 贺钰婷</h1>
+        <p class="subtitle">ENCOUNTERING SECURITY<br><br>PhD Candidate and University Tutor at The University of Sydney. <br> Researching emerging technologies and the changing global security practices, knowledge and power dynamics in the age of polycrisis. </p>
+    </header>
+
+    <section id="about" class="reveal">
+        <h2 class="section-title">ABOUT ME</h2>
+        <div class="grid-container">
+            <div>
+                <div class="item">
+                    <strong>THE UNIVERSITY OF SYDNEY</strong><br>
+                    PhD Candidate in Government and International Relations <br>
+                    Project: Phones, Drones and Satellites: the ‘Livestreaming’ Effect and the Transformation of Global Security Practices <br>
+                    Supervisor: Professor James Der Derian
+                </div>
+                <div class="item">
+                    <strong>UNIVERSITY OF CAMBRIDGE</strong><br>
+                    MPhil Politics and International Studies
+                </div>
+                <div class="item">
+                    <strong>UNIVERSITY OF NOTTINGHAM </strong><br>
+                    BA (Hons) International Studies, First Class/Top 1% 
+                </div>
+            </div>
+            <div>
+                <strong>RESEARCH INTERESTS</strong><br>
+                Critical Security Studies • STS • Unorthodox IR Theories • Architecture & Politics • Gender • China & East Asia
+                <br><br><br>
+                <strong>AWARDS</strong><br>
+                2025 FASS Teaching Prize: Dean’s Citation for Excellence with Distinction <br>
+                2020-2021 China National Scholarship
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <h2 class="section-title">CURRENT PROJECTS</h2>
+        <div id="project-container">
+            <div id="project-main-list" class="project-list">
+                <div class="item">
+                    <h3><a href="javascript:void(0)" onclick="showProject('phd')">Phones, Drones and Satellites (PhD Thesis)</a></h3>
+                    <p>The ‘Livestreaming’ Effect and the Transformation of Global Security Practices. </p>
+                </div>
+                <div class="item">
+                    <h3><a href="javascript:void(0)" onclick="showProject('book1')">Directing the Gaze at the Flesh</a></h3>
+                    <p>Book chapter in progress with Oxford University Press on practice-turn IR scholarship and digital diplomacy. </p>
+                </div>
+                <div class="item">
+                    <h3><a href="javascript:void(0)" onclick="showProject('book2')">Western Mountain, Chinese Molehill?</a></h3>
+                    <p>Gender Discourse in Contemporary China. </p>
+                </div>
+                <div class="item">
+                    <h3><a href="javascript:void(0)" onclick="showProject('podcast')">Overreactology (Podcast)</a></h3>
+                    <p>Youth politics and everyday international relations. </p>
+                </div>
+            </div>
+
+            <div id="detail-phd" class="project-detail hidden">
+                <span class="back-btn" onclick="hideDetails()">← Return</span>
+                <h3>PHONES, DRONES AND SATELLITES</h3>
+                <p>Livestreaming—the real-time transmission of audiovisual content—facilitates the dissemination of information beyond geographical boundaries, fostering a sense of proximity and witnessing in security practices and global political communication. From terrestrial to extraterrestrial space, livestreaming has become a vital feature of mobile phones, drones, and satellites, introducing unprecedented levels of perceived authenticity, entanglement, and immediacy. My doctoral research investigates how livestreaming technologies reshape global security knowledge, practices and power, and the role of (non)-humans in the process of securitisation. This project builds on my previous works on ‘Battles on The ‘Fourth Front’: A Dromological Analysis of the First ‘TikTok W@r’, digital diplomacy practices on videoconferencing platforms and global digital politics. </p>
+            </div>
+
+            <div id="detail-book1" class="project-detail hidden">
+                <span class="back-btn" onclick="hideDetails()">← Return</span>
+                <h3>DIRECTING THE GAZE AT THE FLESH</h3>
+                <p>Drieschova, A. and He, Y. (book chapter) “Directing the Gaze at the Flesh out of Which Practices are Made and the Milieu Which Choreographs Them”.  Publication in progress under Oxford University Press. This project builds on my MPhil thesis ‘Gendering Zoom Diplomacy in the Age of the Global Pandemic’ on gender and digital diplomatic practices under the lenses of phenomenology and IR practice-turn scholarship. </p>
+            </div>
+
+            <div id="detail-book2" class="project-detail hidden">
+                <span class="back-btn" onclick="hideDetails()">← Return</span>
+                <h3>WESTERN MOUNTAIN, CHINESE MOLEHILL?</h3>
+                <p>He Y. and Brown R.J. (Book Chapter) Western Mountain, Chinese Molehill? Sensitivity, Discipline and Gender Discourse in Contemporary China (Abstract accepted). </p>
+            </div>
+
+            <div id="detail-podcast" class="project-detail hidden">
+                <span class="back-btn" onclick="hideDetails()">← Return</span>
+                <h3>OVERREACTOLOGY (PODCAST)</h3>
+                <p>Co-hosting ‘Overreactology’: a ‘made-in-China’ podcast on youth politics and everyday international relations—let’s overreact! </p><br>
+                <p style="margin-top:1rem;">
+                <a href="https://substack.com/home/post/p-163894303" target="_blank">#Living in the Cloud: How Columbia Journalism School Students Capture the Reality of Protest Scenes</a><br>
+                <a href="https://substack.com/home/post/p-161939355" target="_blank">#Living in Indonesia: Global South Perspectives and Everyday Life at the Periphery of the Russia-Ukraine Conflict</a><br>
+                <a href="https://substack.com/home/post/p-161106957" target="_blank">#A Queer Jewish Life Between Silence and Solidarity amid Israeli-Palestinian Conflict </a><br>
+                <a href="https://substack.com/home/post/p-160554079" target="_blank">#Living in London, how the Israeli-Palestinian conflict 'disrupts' my neighbourhood, schedule, food and nightlife </a><br>
+                <a href="https://substack.com/home/post/p-160477105" target="_blank">#TikTok Special Episode 02 | Beyond TikTok Ban: States, Corporations, and Individuals in Global Digital Politics</a><br>
+                <a href="https://substack.com/home/post/p-160398830" target="_blank">#TikTok Special Episode 01 | @TikTokRefugee: What Happened in the US</a>
+                </p><br>
+                <p> Find Us: </p>
+                <p style="margin-top:1rem;">
+                    <a href="https://substack.com/@overreactology" target="_blank">Newsletter</a> | 
+                    <a href="https://podcasts.apple.com/au/podcast/%E5%B0%8F%E9%A2%98%E5%A4%A7%E5%81%9Aoverreactology/id1744736348" target="_blank">ApplePodcast</a> | 
+                    <a href="https://www.xiaoyuzhoufm.com/podcast/6612c287c29d4729baaa34b1" target="_blank">小宇宙</a>
+                 </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="reveal">
+        <h2 class="section-title">PUBLICATIONS & RESEARCH</h2>
+        
+        <h3 class="sub-section-title">BOOK CHAPTERS</h3>
+        <div class="item">
+            <p>He, Y. and Mizuri, S. (2024) ‘Foreign Simulations, Postcolonial Entanglement, and Identity: Reflections on Studying at an International(ised) University’, in Tomiak, K. and Brown, R.J. (eds.) <i>Moving Abroad: Risks and Rewards Searching for an Academic Life Far Away</i>. Singapore: Palgrave Macmillan. </p>
+        </div>
+
+        <h3 class="sub-section-title">CONFERENCES</h3>
+        <div class="item">
+            <p>‘Grasping the Speed of Global Politics: a Quantum Analysis of the Effects of Social Media Livestreaming’, in <i>11th Oceanic Conference on International Studies (OCIS)</i>, July 2025. </p>
+        </div>
+        <div class="item">
+            <p>‘Battles on The ‘Fourth Front’: A Dromological Analysis of the First ‘TikTok W@r’,’ in <i>10th European Workshops in International Studies, European International Studies Association (EISA)</i>, July 2023. </p>
+        </div>
+        <div class="item">
+            <p>‘Assembling the ‘Fourth Front’ on TikTok: Speed, Truth, and the Russian-Ukrainian War’, in <i>Department of Media and Communications 20th anniversary conference 'Media Futures'</i>, LSE, June 2023. </p>
+        </div>
+        <div class="item">
+            <p>‘“Are You Still There?”: Gendering Zoom Diplomacy in the Age of the Global Pandemic,’ in <i>MCR/SCR Research Day</i>, Robinson College, University of Cambridge, May 2023. </p>
+        </div>
+        <div class="item">
+            <p>‘Paul Virilio and the Temporal conditions of (Dis)community’, in <i>French Graduate Conference: Finding Community In and Beyond the Francosphère</i>, University of Cambridge, January 2023. </p>
+        </div>
+        <div class="item">
+            <p>‘Interrogating Post-truth Politics From the Perspectives of Speed and Technology in the Age of Global Pandemic Through Paul Virilio's Dromology’, in <i>The Asian Undergraduate Research Symposium (AURS2021)</i>, IAFOR, Tokyo/Japan (Online), November 2021. </p>
+        </div>
+    </section>
+
+    <section id="media" class="reveal">
+        <h2 class="section-title">MEDIA & BLOG POSTS</h2>
+        <div class="item">
+            <p>He, Y. (2025) ‘Sydney Premiere of Project Q: War, Peace and Quantum Mechanics’, <i>SSPS Newsletter</i>. <a href="newsletter.html" target="_blank">Read Article</a>. </p>
+        </div>
+        <div class="item">
+            <p>He, Y. and Brown, R.J. (2025) ‘Love, freedom and capital: the legacy of Alexandra Kollontai’, <i>The Loop</i>. <a href="https://theloop.ecpr.eu/love-freedom-and-capital-the-legacy-of-alexandra-kollontai/" target="_blank">Link</a>. </p>
+        </div>
+        <div class="item">
+            <p>He, Y. (2024) ‘How livestreaming helped save South Korean democracy’, <i>The Loop</i>. <a href="https://theloop.ecpr.eu/how-livestreaming-helped-save-south-korean-democracy/" target="_blank">Link</a>. </p>
+        </div>
+        <div class="item">
+            <p>He, Y. and Brown, R.J. (2023) ‘China’s Boxing Feminists: Discipline and Resistance in Contemporary Chinese Feminism’, <i>The Loop</i>. <a href="https://theloop.ecpr.eu/chinese-feminists-female-boxer-discipline-and-resistance-in-contemporary-chinese-feminism/" target="_blank">Link</a>. </p>
+        </div>
+    </section>
+
+    <section id="teaching" class="reveal">
+        <h2 class="section-title">TEACHING</h2>
+         <div class="teaching-item">
+            <strong>GOVT6111: Chinese Politics (Semester 1, 2026 [Marker])</strong>
+            <p>A postgraduate course on examine the internal governance of the People's Republic of China and aspects of its external relations. </p>
+        </div>
+        <div class="teaching-item">
+            <strong>GOVT3601: Essential Texts in Politics and IR (Semester 2, 2025)</strong>
+            <p>A final-year course on the history of political thought, focusing on conceptions of liberty in the works of key thinkers such as Thomas Hobbes, Isaiah Berlin, Karl Marx, and Charles Taylor, and on how the classics inform key themes in politics and International Relations today, including human rights, inequality, and the rise of China. </p>
+        </div>
+        <div class="teaching-item">
+            <strong>GOVT2921: Intermediate International Relations (Semester 1, 2025)</strong>
+            <p>A Level 2 course covering key areas in international relations, including international security, international political economy, international organisations, and global ethics. </p>
+        </div>
+        <div class="teaching-item">
+            <strong>GOVT2901: Contemporary Issues in Politics and International Relations (Semester 2, 2024)</strong>
+            <p>A level 2 course on the politics of the 'Other' and the processes of 'Othering', exploring diverse topics such as the Political Philosophy of Animals, Aliens and Politics, Media and War, Security Challenges of AI, and Geopolitics. </p>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal">
+        <h2 class="section-title">CONTACT</h2>
+        <p>Email: <a href="mailto:yuhe0674@uni.sydney.edu.au">yuhe0674@uni.sydney.edu.au</a> </p>
+        <p style="margin-top: 1rem;">
+            <a href="https://scholar.google.com/citations?user=wc96V6gAAAAJ" target="_blank">Google Scholar</a> | 
+            <a href="https://orcid.org/0009-0006-1590-8881" target="_blank">ORCID</a> |
+            <a href="https://linkedin.com/in/yuting-alina-he-961169197" target="_blank">LinkedIn</a> | 
+            <a href="https://bsky.app/profile/alinayutinghe.bsky.social" target="_blank">Bluesky</a> |
+            <a href="https://x.com/YutingHeALINA" target="_blank">X</a>
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2026 YUTING ALINA HE 贺钰婷
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        function showProject(id) {
+            document.getElementById('project-main-list').classList.add('hidden');
+            setTimeout(() => {
+                document.getElementById('project-main-list').style.display = 'none';
+                const detail = document.getElementById('detail-' + id);
+                detail.style.display = 'block';
+                setTimeout(() => detail.classList.remove('hidden'), 50);
+            }, 500);
+        }
+
+        function hideDetails() {
+            const activeDetail = document.querySelector('.project-detail:not(.hidden)');
+            activeDetail.classList.add('hidden');
+            setTimeout(() => {
+                activeDetail.style.display = 'none';
+                const mainList = document.getElementById('project-main-list');
+                mainList.style.display = 'block';
+                setTimeout(() => mainList.classList.remove('hidden'), 50);
+            }, 500);
+        }
+    </script>
+</body>
+</html>
